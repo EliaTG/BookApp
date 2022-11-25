@@ -1,0 +1,62 @@
+<main>
+        <div class="heroes">
+            <div class="text_hero ">
+                <h1 class="logoh1">Find Your Favorite Book</h1>
+                <p class="phrase">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, ratione! Repellat aspernatur a reiciendis, culpa non tenetur optio veritatis quibusdam. Esse enim numquam.
+                </p>
+                 <p>
+                        <a href="/create-editorial" class="btn btn-add my-2">Add a new editorial</a>
+                </p>
+            </div>
+            <div class="hero-group">
+                <ul>
+                    <li class='book'>
+                        <img src='https://d.gr-assets.com/books/1348927776l/8032112.jpg' />
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="album py-5 homeCards">
+                        <div class="container">
+                            <div class="row">
+                            {{!-- {{#if hasHeroes}} --}}
+
+                                {{!-- {{#each pokemon as |pokem|}} --}}
+                                    <div class="ContainerBook ">
+                                            <div class="booksDiv">
+                                                <ul>
+                                                    <li class='book bookCard'>
+                                                        <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
+                                                    </li>
+                                                </ul>
+                                                    <h5 class="card-title">{{pokem.name}} Thinking, fast and slow</h5>
+                                                    <span class=" mb-2 text-muted">By:  DANIEL KAHNEMAN{{pokem.race.dataValues.name}}</span>
+                                                    <span class=" mb-2 ">Publication:  2011{{pokem.race.dataValues.name}}</span>
+                                                    <span class=" mb-2 ">Publisher:  Farrar, Straus and Giroux{{pokem.race.dataValues.name}}</span>
+                                                    <span class=" mb-2 ">Country Publisher:  United States{{pokem.race.dataValues.name}}</span>
+                                                    <div class="btns">
+                                                        <form id="form-delete" class="form-inline" action="/delete-editorial" method="post">
+                                                            <input type="hidden" name="editorialId" value="{{this.id}}" />
+                                                            <button type="submit" id="delete-editorial" class="btn btnDelete delete-book btn-danger float-end">Delete</button>
+                                                        </form>
+                                                        <a href="/edit-editorial/{{this.id}}?edit=true"
+                                                            class="btn btn-warning float-end btnEdit">Edit</a>
+                                                    </div>
+                                            </div>
+                                    </div>
+                            {{!-- {{/each}} --}}
+                         </div>
+                    </div>
+                {{!-- 
+                {{else}}
+
+                    <h1 class="notcreated">There are not pokemon created</h1>
+
+                {{/if}}  --}}
+
+                </div>
+            </div>
+        </div>
+</main>

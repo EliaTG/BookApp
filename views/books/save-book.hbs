@@ -1,0 +1,70 @@
+<div class="row formCreate">
+    {{#if hasAuthors}}
+    {{!-- {{#if hasCategories}} --}}
+    {{!-- {{#if hasEditorials}} --}}
+      <div class="card">
+        <div class="card-header text-white">
+          {{#if editMode}}Edit{{else}}Create{{/if}} a book
+        </div>
+        <div class="card-body">
+          <form method="POST" action="{{#if editMode}}/edit-book{{else}}/create-book{{/if}}">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="Title" value="{{#if editMode}}{{book.title}}{{/if}}" required/>
+            </div>
+
+            
+            <div class="mb-3">
+                  <label for="imageUrl" class="form-label">Image URL</label>
+                  <input type="text" class="form-control" id="imageUrl" name="ImageUrl" value="{{#if editMode}}{{book.imageUrl}}{{/if}}" required/>
+             </div>
+           
+            <div class="mb-3">
+              <label for="published" class="form-label">Publication year</label>
+              <input type="number" class="form-control" id="published" name="Published" placeholder="2019" value="{{#if editMode}}{{book.published}}{{/if}}" required />
+            </div>
+            
+            <div class="mb-3">
+              <label for="author" class="form-label">Author </label>
+              <select class="form-select" id="author" name="authorId">
+                <option {{#if editMode}}{{else}}selected{{/if}}>Select an option</option>
+
+                {{#each author}}
+
+                    {{#if (EqualValue author.id ../book.authorId )}}
+                    <option selected value="{{author.authorId}}">{{author.name}}</option>
+                    {{else}}
+                    <option value="{{author.authorId}}">{{author.name}}</option>
+                    {{/if}}
+                  
+                {{/each}} 
+                
+              </select>
+            </div>
+           
+
+          {{#if editMode}}
+
+          <input type="hidden" name="bookId" value="{{book.id}}">
+          
+          {{/if}}
+
+          <button type="submit" class="btn btn-primary">{{#if editMode}}Edit{{else}}Create{{/if}}</button>
+           <a href="/book" type="button" class="btn btn-warning">Back</a>
+        </form>
+
+      </div>
+    </div>
+
+  
+  {{else}}
+    <h1 class="notcreated text-center">There are not author created</h1>
+  {{/if}}
+  {{!-- {{else}}
+    <h1 class="notcreated text-center">There are not author created</h1>
+  {{/if}}
+  {{else}}
+    <h1 class="notcreated text-center">There are not author created</h1>
+  {{/if}} --}}
+
+</div>

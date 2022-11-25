@@ -12,23 +12,26 @@
 <body>
         <nav class="navbar">
                     <div class="logo">
-                        <img src="assets/imgs/logo.png" alt="Pokemon Logo">
+                        <h3>Nilo</h3>
                     </div>
                     <ul>
                         <li>
                              <a class="nav-link {{#if homeActive}}active{{/if}}" aria-current="page" href="/">Home</a>
                         </li>
                         <li>
-                           <a class="nav-link {{#if pokemonActive}}active{{/if}}" href="/pokemons">Pokemons</a>
+                           <a class="nav-link {{#if BookActive}}active{{/if}}" href="/book">Books</a>
                         </li>
                         <li>
-                              <a class="nav-link {{#if regionActive}}active{{/if}}" href="/regions">Regions</a>
+                              <a class="nav-link {{#if CategoryActive}}active{{/if}}" href="/category">Categories</a>
                         </li>
                         <li>
-                            <a class="nav-link {{#if typeActive}}active{{/if}}" href="/types">Types</a>
+                            <a class="nav-link {{#if AuthorActive}}active{{/if}}" href="/authors">Authors</a>
+                        </li>
+                        <li>
+                            <a class="nav-link {{#if EditorialActive}}active{{/if}}" href="/editorial">Editorials</a>
                         </li>
                     </ul>
-                        <div class="search">
+                        {{!-- <div class="search">
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected>Regions</option>
                                 <option value="1">Kanto</option>
@@ -42,7 +45,7 @@
                         <form class="d-flex" role="search">
                             <input class="input-search me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn-search" type="submit">Search</button>
-                        </form>
+                        </form> --}}
 
                         </div>
         </nav>

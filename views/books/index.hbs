@@ -1,11 +1,18 @@
 <main>
-        <div class="row  heroes">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="logoh1">Pokedex App</h1>
-                <p class="lead text-muted">Pokemon, also known as Pocket Monsters in Japan,
-                    is a Japanese media franchise managed by the Pokemon Company, a company founded by Nintendo.
+        <div class="heroes">
+            <div class="text_hero ">
+                <h1 class="logoh1">Find Your Next Book</h1>
+                <p class="phrase">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, ratione! Repellat aspernatur a reiciendis, culpa non tenetur optio veritatis quibusdam. Esse enim numquam.
                 </p>
-                {{!-- <img class="heroimg" src="assets/imgs/pokemons/pikachu.png" alt="" srcset=""> --}}
+            </div>
+            <div class="hero-group">
+                <ul>
+                    <li class='book'>
+                        <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
+                    </li>
+                </ul>
+
             </div>
         </div>
 
@@ -14,20 +21,24 @@
                             <div class="row">
                             {{!-- {{#if hasHeroes}} --}}
 
-                                    {{#each pokemon as |pokem|}}
-                                <div class="card col-md-3">
-                                        <div class="card-body">
-                                            <div class="img-div">
-                                                {{!-- <img class="pokemonimg" src="assets/imgs/pokemons/pikachu.png" alt="" srcset=""> --}}
-                                                <img class="pokemonimg" src="{{pokem.imageUrl}}" class="img_movie card-img-top" alt="{{pokem.name}}" />
-                                                <h5 class="card-title">{{pokem.name}}</h5>
-                                            </div>
-                                            <p class="card-text">{{pokem.description}}</p>
-                                            <h6 class="card-subtitle mb-2 text-muted">Type:  {{pokem.race.dataValues.name}}</h6>
-                                            <h6 class="card-subtitle mb-2 text-muted">Region:  {{pokem.race.dataValues.name}} </h6>
-                                        </div>
-                            </div>
-                                    {{/each}}
+                                {{!-- {{#each pokemon as |pokem|}} --}}
+                                <form class="form-details" action="/book-details" method="post">
+                                    <div class="ContainerBook ">
+                                                <div class="booksDiv">
+                                                    <ul>
+                                                        <li class='book bookCard'>
+                                                            <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
+                                                        </li>
+                                                    </ul>
+                                                        <h5 class="card-title">{{pokem.name}} Thinking, fast and slow</h5>
+                                                        <span class=" mb-2 text-muted">By:  DANIEL KAHNEMAN{{pokem.race.dataValues.name}}</span>
+                                                        <span class=" mb-2 ">Publication:  2011{{pokem.race.dataValues.name}}</span>
+                                                        <span class=" mb-2 ">Publisher:  Farrar, Straus and Giroux{{pokem.race.dataValues.name}}</span>
+                                                        <span class=" mb-2 ">Country Publisher:  United States{{pokem.race.dataValues.name}}</span>
+                                                </div>
+                                    </div>
+                                </form>
+                            {{!-- {{/each}} --}}
                          </div>
                     </div>
 {{!-- 
